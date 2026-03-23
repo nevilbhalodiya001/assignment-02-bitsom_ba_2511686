@@ -1,0 +1,108 @@
+[
+  {
+    "_id": { "$oid": "64a1f2c3e4b0a1234567abc1" },
+    "category": "Electronics",
+    "product_id": "ELEC-001",
+    "name": "Sony WH-1000XM5 Wireless Headphones",
+    "brand": "Sony",
+    "price": 29999,
+    "currency": "INR",
+    "stock": 42,
+    "rating": 4.7,
+    "tags": ["noise-cancelling", "wireless", "bluetooth", "over-ear"],
+    "specifications": {
+      "battery_life_hours": 30,
+      "connectivity": ["Bluetooth 5.2", "3.5mm Jack"],
+      "voltage": "5V DC",
+      "warranty_years": 2,
+      "weight_grams": 250,
+      "frequency_response": "4Hz–40,000Hz",
+      "driver_size_mm": 40
+    },
+    "certifications": ["CE", "FCC", "BIS"],
+    "images": [
+      "https://cdn.store.com/elec001-front.jpg",
+      "https://cdn.store.com/elec001-side.jpg"
+    ],
+    "created_at": { "$date": "2024-01-10T08:00:00Z" },
+    "updated_at": { "$date": "2024-06-15T12:30:00Z" }
+  },
+
+  {
+    "_id": { "$oid": "64a1f2c3e4b0a1234567abc2" },
+    "category": "Clothing",
+    "product_id": "CLTH-042",
+    "name": "Levi's 511 Slim Fit Jeans",
+    "brand": "Levi's",
+    "price": 3499,
+    "currency": "INR",
+    "stock": 118,
+    "rating": 4.3,
+    "tags": ["jeans", "denim", "slim-fit", "casual", "men"],
+    "specifications": {
+      "material": "99% Cotton, 1% Elastane",
+      "fit_type": "Slim",
+      "care_instructions": ["Machine wash cold", "Tumble dry low", "Do not bleach"],
+      "origin": "India",
+      "season": ["Summer", "Spring", "Autumn"]
+    },
+    "variants": [
+      { "size": "30x30", "color": "Dark Blue", "sku": "CLTH-042-30-DB", "stock": 20 },
+      { "size": "32x32", "color": "Dark Blue", "sku": "CLTH-042-32-DB", "stock": 35 },
+      { "size": "32x32", "color": "Black", "sku": "CLTH-042-32-BK", "stock": 28 },
+      { "size": "34x32", "color": "Grey", "sku": "CLTH-042-34-GR", "stock": 35 }
+    ],
+    "gender": "Men",
+    "age_group": "Adult",
+    "images": [
+      "https://cdn.store.com/clth042-front.jpg",
+      "https://cdn.store.com/clth042-detail.jpg"
+    ],
+    "created_at": { "$date": "2024-02-01T09:00:00Z" },
+    "updated_at": { "$date": "2024-07-20T10:15:00Z" }
+  },
+
+  {
+    "_id": { "$oid": "64a1f2c3e4b0a1234567abc3" },
+    "category": "Groceries",
+    "product_id": "GROC-109",
+    "name": "Amul Full Cream Milk Powder",
+    "brand": "Amul",
+    "price": 349,
+    "currency": "INR",
+    "stock": 275,
+    "rating": 4.5,
+    "tags": ["dairy", "milk-powder", "full-cream", "breakfast", "vegetarian"],
+    "specifications": {
+      "weight_grams": 500,
+      "form": "Powder",
+      "shelf_life_days": 270,
+      "expiry_date": { "$date": "2024-12-15T00:00:00Z" },
+      "storage_instructions": "Store in a cool, dry place. Once opened, refrigerate and use within 30 days.",
+      "country_of_origin": "India"
+    },
+    "nutritional_info": {
+      "serving_size_grams": 30,
+      "per_serving": {
+        "energy_kcal": 146,
+        "protein_grams": 7.5,
+        "carbohydrates_grams": 11.4,
+        "fat_grams": 7.9,
+        "calcium_mg": 268,
+        "sodium_mg": 105
+      }
+    },
+    "dietary_flags": {
+      "vegetarian": true,
+      "vegan": false,
+      "gluten_free": true,
+      "contains_allergens": ["Milk"]
+    },
+    "fssai_license": "10013022002253",
+    "images": [
+      "https://cdn.store.com/groc109-front.jpg"
+    ],
+    "created_at": { "$date": "2024-03-05T07:00:00Z" },
+    "updated_at": { "$date": "2024-08-01T08:45:00Z" }
+  }
+]

@@ -1,0 +1,15 @@
+## Database Recommendation
+
+**Recommendation: MySQL (RDBMS) as the primary database, with MongoDB added only if a fraud detection module is introduced.**
+
+For a healthcare patient management system, picking the right database is not just a technical decision — it directly affects patient safety and how well the system follows medical regulations. The main reason to go with MySQL comes down to two things: ACID properties and the fact that healthcare data is naturally relational.
+
+Healthcare records are connected to each other. A patient has appointments, appointments are linked to doctors, doctors belong to departments, and every prescription is tied to a diagnosis. This kind of connected data is exactly what relational databases are built for. Foreign keys make sure the data stays consistent automatically — for example, you cannot add a prescription for a patient who doesn't exist, or delete a doctor who still has scheduled appointments. If you try to handle these checks in application code with MongoDB, it becomes messy and different developers might do it differently.
+
+ACID transactions are a must in healthcare. Imagine a doctor updating a patient's allergy list and writing a new prescription at the same time. Both changes should either save together or not at all — if only one goes through, the patient might get a medicine they are allergic to. MySQL handles this safely. MongoDB follows the BASE model (Basically Available, Soft state, Eventually consistent), which allows some temporary inconsistency. That might be fine for an online shopping catalogue, but it's risky for medical records.
+
+The CAP theorem says a distributed system can only guarantee two out of three things: Consistency, Availability, and Partition Tolerance. MySQL in a normal setup focuses on Consistency and Partition Tolerance (CP). MongoDB by default focuses on Availability and Partition Tolerance (AP), which means it might show outdated data during a network issue. For patient records, showing a wrong drug dose or missing allergy information is simply not acceptable.
+
+If a fraud detection module is added, things change a bit. Fraud detection needs to process large amounts of activity data — like login attempts, billing records, and access logs — quickly, and the structure of this data can keep changing. MongoDB is actually a good fit here because of its flexible document structure and ability to scale easily. In this case, using both databases together makes sense: MySQL for patient and medical data, and MongoDB for the fraud detection side. They handle different types of work and should be kept separate.
+
+To summarize: use MySQL for patient management. The fixed structure, ACID support, and data integrity rules are not limitations — they are what makes the system safe for patients.
